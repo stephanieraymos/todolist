@@ -1,11 +1,12 @@
 import React from 'react';
+import Todos from './Components/Todos';
 import './App.css';
 
 function App() {
   return (
     //JSX, Javascript can be used in JSX with {curly braces}
     <div className="App">
-      <h1>App</h1>
+      <Todos />
     </div>
   );
 }
