@@ -23,11 +23,15 @@ class App extends Component {
     ]
   }
 
+  markComplete = () => {
+console.log('From app.js')
+  }
+
   render() {
     return (
       //JSX, Javascript can be used in JSX with {curly braces}
       <div className="App">
-        <Todos todos= {this.state.todos} />
+        <Todos todos= {this.state.todos} markComplete={this.markComplete} />
       </div>
     );
   }
