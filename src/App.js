@@ -2,22 +2,24 @@ import React, { Component } from 'react';
 import Todos from './Components/Todos';
 import AddTodo from './Components/AddTodo';
 import './App.css';
-import Header from './Components/layout/Header'
+import Header from './Components/layout/Header',
+import uuid from 'uuid'
+
 class App extends Component {
   state = {
     todos: [
       {
-        id: 1,
+        id: uuid.v4(),
         title: "Take out the trash",
         completed: false
       },
       {
-        id: 2,
+        id: uuid.v4(),
         title: "Dinner with wife",
         completed: true
       },
       {
-        id: 3,
+        id: uuid.v4(),
         title: "Meeting with boss",
         completed: false
       }
@@ -42,7 +44,7 @@ this.setState({ todos: this.state.todos.map(todo => {
  //Add Todo
  addTodo = (title) => {
    const newTodo={
-     id: 4,
+     id: uuid.v4(),
      title,
      completed: false
    }
