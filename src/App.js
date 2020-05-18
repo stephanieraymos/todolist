@@ -39,13 +39,23 @@ this.setState({ todos: this.state.todos.map(todo => {
     this.setState( { todos: [...this.state.todos.filter(todo => todo.id !== id)]});
  }
 
+ //Add Todo
+ addTodo = (title) => {
+   const newTodo={
+     id: 4,
+     title,
+     completed: false
+   }
+  this.setState({ todos: [...this.state.todos, newTodo] });
+ }
+
   render() {
     return (
       //JSX, Javascript can be used in JSX with {curly braces}
       <div className="App">
         <div className="container">
           <Header />
-          <AddTodo />
+          <AddTodo addTodo={this.addTodo} />
           <Todos 
           todos= {this.state.todos} 
           markComplete={this.markComplete} 
