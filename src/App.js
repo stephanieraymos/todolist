@@ -16,7 +16,7 @@ class App extends Component {
       {
         id: uuidv4(),
         title: "Dinner with wife",
-        completed: true
+        completed: false
       },
       {
         id: uuidv4(),
