@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Todos from './Components/Todos';
 import './App.css';
-
+import Header from './Components/layout/Header'
 class App extends Component {
   state = {
     todos: [
@@ -42,7 +42,11 @@ this.setState({ todos: this.state.todos.map(todo => {
     return (
       //JSX, Javascript can be used in JSX with {curly braces}
       <div className="App">
-        <Todos todos= {this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo} />
+        <Header />
+        <Todos 
+        todos= {this.state.todos} 
+        markComplete={this.markComplete} 
+        delTodo={this.delTodo} />
       </div>
     );
   }
