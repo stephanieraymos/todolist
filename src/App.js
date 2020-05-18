@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todos from './Components/Todos';
+import AddTodo from './Components/AddTodo';
 import './App.css';
 import Header from './Components/layout/Header'
 class App extends Component {
@@ -43,6 +44,7 @@ this.setState({ todos: this.state.todos.map(todo => {
       //JSX, Javascript can be used in JSX with {curly braces}
       <div className="App">
         <Header />
+        <AddTodo />
         <Todos 
         todos= {this.state.todos} 
         markComplete={this.markComplete} 
