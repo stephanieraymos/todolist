@@ -30,3 +30,24 @@ padding: 10px
   cursor: pointer;
   float: right
 }
+
+.btnStyle:hover {
+  background: #d60e43;
+}
+
+.container {
+  padding: 0 1rem;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
+}

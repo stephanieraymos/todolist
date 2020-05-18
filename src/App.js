@@ -43,12 +43,14 @@ this.setState({ todos: this.state.todos.map(todo => {
     return (
       //JSX, Javascript can be used in JSX with {curly braces}
       <div className="App">
-        <Header />
-        <AddTodo />
-        <Todos 
-        todos= {this.state.todos} 
-        markComplete={this.markComplete} 
-        delTodo={this.delTodo} />
+        <div className="container">
+          <Header />
+          <AddTodo />
+          <Todos 
+          todos= {this.state.todos} 
+          markComplete={this.markComplete} 
+          delTodo={this.delTodo} />
+        </div>
       </div>
     );
   }
