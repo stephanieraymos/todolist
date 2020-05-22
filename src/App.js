@@ -29,41 +29,48 @@ class App extends Component {
 
   // Toggle Complete
   markComplete = (id) => {
-this.setState({ todos: this.state.todos.map(todo => {
-  if (todo.id === id) {
-      todo.completed = !todo.completed
+    this.setState({
+      todos: this.state.todos.map(todo => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed
+        }
+        return todo;
+      })
+    });
   }
-  return todo;
-}) }); 
- }
 
- // Delete Todo
- delTodo = (id) => {
-    this.setState( { todos: [...this.state.todos.filter(todo => todo.id !== id)]});
- }
+  // Delete Todo
+  delTodo = (id) => {
+    this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] });
+  }
 
- //Add Todo
- addTodo = (title) => {
-   const newTodo={
-    id: uuidv4(),
-    title,
-     completed: false
-   }
-  this.setState({ todos: [...this.state.todos, newTodo] });
- }
+  //Add Todo
+  addTodo = (title) => {
+    const newTodo = {
+      id: uuidv4(),
+      title,
+      completed: false
+    }
+    this.setState({ todos: [...this.state.todos, newTodo] });
+  }
 
   render() {
     return (
-            //JSX, Javascript can be used in JSX with {curly braces}
+      //JSX, Javascript can be used in JSX with {curly braces}
       <Router>
         <div className="App">
           <div className="container">
             <Header />
-            <AddTodo addTodo={this.addTodo} />
-            <Todos 
-            todos= {this.state.todos} 
-            markComplete={this.markComplete} 
-            delTodo={this.delTodo} />
+            <Route path="/" render={props => (
+              <React.Fragment>
+                <AddTodo addTodo={this.addTodo} />
+                <Todos
+                  todos={this.state.todos}
+                  markComplete={this.markComplete}
+                  delTodo={this.delTodo} />
+              </React.Fragment>
+            )} />
+
           </div>
         </div>
       </Router>
