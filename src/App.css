@@ -51,3 +51,8 @@ padding: 10px
 .btn:hover {
   background: #666;
 }
+
+.linkStyle {
+  color: #fff;
+  text-decoration: none;
+}
