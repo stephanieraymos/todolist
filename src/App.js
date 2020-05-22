@@ -4,6 +4,7 @@ import AddTodo from './Components/AddTodo';
 import './App.css';
 import Header from './Components/layout/Header';
 import { v4 as uuidv4 } from 'uuid';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -53,17 +54,19 @@ this.setState({ todos: this.state.todos.map(todo => {
 
   render() {
     return (
-      //JSX, Javascript can be used in JSX with {curly braces}
-      <div className="App">
-        <div className="container">
-          <Header />
-          <AddTodo addTodo={this.addTodo} />
-          <Todos 
-          todos= {this.state.todos} 
-          markComplete={this.markComplete} 
-          delTodo={this.delTodo} />
+            //JSX, Javascript can be used in JSX with {curly braces}
+      <Router>
+        <div className="App">
+          <div className="container">
+            <Header />
+            <AddTodo addTodo={this.addTodo} />
+            <Todos 
+            todos= {this.state.todos} 
+            markComplete={this.markComplete} 
+            delTodo={this.delTodo} />
+          </div>
         </div>
-      </div>
+      </Router>
     );
   }
 }
