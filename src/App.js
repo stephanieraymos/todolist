@@ -5,6 +5,8 @@ import './App.css';
 import Header from './Components/layout/Header';
 import { v4 as uuidv4 } from 'uuid';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import About from './Components/Pages/About';
+
 
 class App extends Component {
   state = {
@@ -61,7 +63,7 @@ class App extends Component {
         <div className="App">
           <div className="container">
             <Header />
-            <Route path="/" render={props => (
+            <Route exact path="/" render={props => (
               <React.Fragment>
                 <AddTodo addTodo={this.addTodo} />
                 <Todos
@@ -70,7 +72,7 @@ class App extends Component {
                   delTodo={this.delTodo} />
               </React.Fragment>
             )} />
-
+            <Route path= "/about" component={About} />
           </div>
         </div>
       </Router>
